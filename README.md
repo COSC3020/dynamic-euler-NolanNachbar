@@ -14,6 +14,21 @@ programming (not memoization). Change the implementation accordingly.
 Test your new functions; I've provided some basic testing code in `code.test.js`
 but you need to go beyond that.
 
+Recall the given implementation, 
+```js
+function factorial(n) {
+    if(n === 0) return 1;
+    else return n * factorial(n - 1);
+}
+
+function e(n) {
+    if(n === 0) return 1;
+    else return 1.0 / factorial(n) + e(n - 1);
+}
+```
+
+This is inefficient because a new factorial is computed for every value $n, n - 1, ..., 1$ without using the previously computed factorials.
+
 ## Runtime Analysis
 
 What is the worst-case big $\Theta$ time complexity of your algorithm?
