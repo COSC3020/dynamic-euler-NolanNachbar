@@ -1,22 +1,21 @@
-function factorial(n) {
-    if(n === 0) return 1;
-    else return n * factorial(n - 1);
-}
+// function factorial(n) {
+//     if(n === 0) return 1;
+//     else return n * factorial(n - 1);
+// }
 
-function e2(n) {
-    if(n === 0) return 1;
-    else return 1.0 / factorial(n) + e2(n - 1);
-}
+// function e(n) {
+//     if(n === 0) return 1;
+//     else return 1.0 / factorial(n) + e(n - 1);
+// }
 
 function e(n) {
-    function _e(n2, n, acc, euler) {
-        if (n2 < n) _e(n2++, (n2 * (acc)), euler + 1/(n2 * (acc))); 
-        return euler;
+    let factorial = 1;
+    let euler = 0;
+    
+    for (let i = 0; i <= n; i++){
+      if (i > 0) factorial *= i;
+      
+      euler += 1 / factorial;
     }
-    return _e(1, n, 1, 1)
+    return euler;
 }
-
-let k = 5;
-
-console.log(e(k));
-console.log(e2(k));
