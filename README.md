@@ -32,3 +32,29 @@ This is inefficient because a new factorial is computed for every value $n, n - 
 ## Runtime Analysis
 
 What is the worst-case big $\Theta$ time complexity of your algorithm?
+
+Here are my functions,
+```js
+function factorial (n) {
+    let fact = 1;
+    for (i = 1; i <= n; i++) {
+        fact *= i;
+    }
+    return fact;
+}
+function e(n) {
+    let factorial = 1;
+    let euler = 0;
+    for (let i = 0; i <= n; i++) {
+      if (i > 0) factorial *= i;
+      euler += 1 / factorial;
+    }
+    return euler;
+}
+```
+
+In each function, there is only one for loop which will run ```n``` times. Thus my algorithm's worst-case big $\Theta$ time complexity is $O(n)$.
+
+I used your code to find the expected values for the test cases. I did this independently but I used the slides to understand the concept of bottom up dynamic programming. 
+
+I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
